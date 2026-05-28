@@ -5,6 +5,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FinancialTransactionController;
 use App\Http\Controllers\DuesPaymentController;
+use App\Http\Controllers\MeetingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,5 +31,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('events', EventController::class);
     Route::resource('finances', FinancialTransactionController::class);
     Route::resource('dues', DuesPaymentController::class);
+    Route::resource('meetings', MeetingController::class);
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

@@ -131,6 +131,10 @@
                 Dues Management
             </a>
 
+            <a href="{{ route('meetings.index') }}" class="{{ request()->is('meetings*') ? 'active' : '' }}">
+                Meetings Management
+            </a>
+
         </aside>
 
         <main class="org-main">
