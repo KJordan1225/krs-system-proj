@@ -30,4 +30,9 @@ class Meeting extends Model
     {
         return $this->hasMany(MeetingTask::class);
     }
+
+    public function attendances()
+    {
+        return $this->hasMany(\App\Models\MeetingAttendance::class);
+    }
 }
