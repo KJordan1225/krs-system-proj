@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FinancialTransactionController;
+use App\Http\Controllers\DuesPaymentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,5 +29,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('members', MemberController::class);
     Route::resource('events', EventController::class);
     Route::resource('finances', FinancialTransactionController::class);
+    Route::resource('dues', DuesPaymentController::class);
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

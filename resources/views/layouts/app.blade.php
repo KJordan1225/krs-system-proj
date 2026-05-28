@@ -1,4 +1,3 @@
-use Illuminate\Support\Facades\Auth;
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -127,7 +126,11 @@ use Illuminate\Support\Facades\Auth;
             <a href="{{ route('finances.index') }}" class="{{ request()->is('finances*') ? 'active' : '' }}">
                 Finances
             </a>
-            
+
+            <a href="{{ route('dues.index') }}" class="{{ request()->is('dues*') ? 'active' : '' }}">
+                Dues Management
+            </a>
+
         </aside>
 
         <main class="org-main">
