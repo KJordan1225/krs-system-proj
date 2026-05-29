@@ -247,7 +247,7 @@ git clone https://github.com/KJordan1225/krs-system-proj.git
 ## Navigate Into Project
 
 ```bash
-cd organization-secretary
+cd krs-system-proj
 ```
 
 ---
