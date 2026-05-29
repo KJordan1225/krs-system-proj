@@ -1,58 +1,383 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# KRS System Project Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern full-stack organization management platform built using Laravel 13, MySQL, Bootstrap 5, and Blade templates.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#  KRS System Project Platform
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The KRS System Project Platform is a comprehensive web application designed to streamline the administrative operations of fraternities, nonprofits, clubs, associations, and civic organizations.
 
-## Learning Laravel
+The platform centralizes:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* Membership management
+* Meeting coordination
+* Attendance tracking
+* Financial record keeping
+* Committee management
+* Document storage
+* Officer reporting
+* Event planning
+* Internal communications
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+This application solves the common problem of fragmented organizational administration by replacing spreadsheets, paper records, disconnected email chains, and manual processes with a unified digital platform.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+The system was architected with scalability, maintainability, and operational accountability in mind using modern Laravel development practices.
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Business Problem Solved
 
-```bash
-composer require laravel/boost --dev
+Many organizations struggle with:
 
-php artisan boost:install
+* Disorganized member records
+* Missing meeting documentation
+* Poor financial accountability
+* Manual attendance tracking
+* Scattered document storage
+* Limited reporting visibility
+* Lack of centralized administration tools
+
+This platform solves these problems through:
+
+* Centralized organizational data management
+* Immutable financial transaction tracking
+* Automated attendance logging
+* Structured meeting documentation
+* Role-ready modular architecture
+* Searchable document repositories
+* Audit-friendly operational workflows
+
+---
+
+## Features
+
+```md
+- Multi-tenant organization architecture
+- Membership management
+- Officer and committee tracking
+- Meeting scheduling and agenda management
+- Attendance management
+- Financial ledger system
+- Treasurer reporting
+- Event management
+- Document storage and archives
+- Real-time dashboard analytics
+- Bootstrap 5 responsive UI
+- Queue-based notification system
+- RESTful API architecture
+- Secure authentication
+- Activity and audit logging
+- Mobile-friendly administrative interface
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## Tech Stack
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```md
+Backend
+-------
+Laravel 13
+PHP 8.4
+MySQL
+Eloquent ORM
+Laravel Queues
+Laravel Scheduler
 
-## Code of Conduct
+Frontend
+--------
+Blade Templates
+Bootstrap 5
+Vanilla JavaScript
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Infrastructure
+--------------
+Apache
+Redis
+Supervisor
+Ubuntu Linux
 
-## Security Vulnerabilities
+Development Tools
+-----------------
+Git
+GitHub
+Composer
+NPM
+Vite
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+# Screenshots
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Members Module
+
+![Members](screenshots/members.png)
+
+## Financial Ledger
+
+![Finances](screenshots/finances.png)
+
+## Meeting Management
+
+![Meetings](screenshots/meetings.png)
+
+## Attendance Tracking
+
+![Attendance](screenshots/attendance.png)
+
+---
+
+# Architecture Diagrams
+
+## Laravel Service Layer
+
+![Service Layer](screenshots/service-layer-diagram.png)
+
+### Service Layer Overview
+
+The application follows a service-oriented Laravel architecture.
+
+```text
+Controllers
+    ↓
+Service Classes
+    ↓
+Repositories
+    ↓
+Eloquent Models
+    ↓
+Database
+```
+
+Examples:
+
+* MemberService
+* FinanceService
+* AttendanceService
+* MeetingService
+* EventService
+* DocumentService
+
+This architecture keeps controllers thin while promoting:
+
+* Maintainability
+* Testability
+* Reusability
+* Separation of concerns
+
+---
+
+## Queue System
+
+![Queue System](screenshots/queue-system.png)
+
+### Queue Architecture
+
+```text
+User Action
+    ↓
+Dispatch Job
+    ↓
+Redis Queue
+    ↓
+Laravel Worker
+    ↓
+Email / Notification / Report Processing
+```
+
+Queues are used for:
+
+* Email notifications
+* Report generation
+* Attendance exports
+* Financial exports
+* Scheduled reminders
+* Event notifications
+
+Benefits:
+
+* Faster UI responsiveness
+* Scalable background processing
+* Improved system reliability
+
+---
+
+## Database ERD
+
+![Database ERD](screenshots/database-erd.png)
+
+### Core Database Relationships
+
+```text
+Organizations
+    ├── Members
+    ├── Meetings
+    ├── Attendance
+    ├── FinancialTransactions
+    ├── Events
+    ├── Documents
+    ├── Committees
+    └── OfficerPositions
+```
+
+Key Design Principles:
+
+* Relational normalization
+* Foreign key integrity
+* Immutable financial records
+* Audit-friendly transaction logging
+* Scalable modular schema
+
+---
+
+# Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/KJordan1225/krs-system-proj.git
+```
+
+---
+
+## Navigate Into Project
+
+```bash
+cd organization-secretary
+```
+
+---
+
+## Install Dependencies
+
+```bash
+composer install
+
+npm install
+```
+
+---
+
+## Configure Environment
+
+```bash
+cp .env.example .env
+```
+
+Update database credentials in `.env`.
+
+---
+
+## Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+---
+
+## Run Migrations
+
+```bash
+php artisan migrate
+```
+
+---
+
+## Create Storage Link
+
+```bash
+php artisan storage:link
+```
+
+---
+
+## Build Frontend Assets
+
+```bash
+npm run build
+```
+
+---
+
+## Start Development Server
+
+```bash
+php artisan serve
+```
+
+---
+
+## Database Design
+
+The schema was designed using:
+
+* Normalized relational modeling
+* Organization-scoped data
+* Immutable ledger transactions
+* Soft deletes where appropriate
+* Optimized indexing
+
+---
+
+# Security Features
+
+```md
+- CSRF protection
+- Password hashing
+- Authentication middleware
+- Validation layers
+- Secure file uploads
+- Route protection
+- Tenant data isolation
+```
+
+---
+
+# Future Enhancements
+
+```md
+- Mobile application
+- Real-time chat
+- SMS notifications
+- AI-powered reporting
+- Stripe payment integration
+- Event ticketing
+- Public organization portals
+- Calendar synchronization
+```
+
+---
+
+# Developer Notes
+
+This project demonstrates:
+
+* Enterprise Laravel architecture
+* Modular application design
+* Queue-based scaling
+* Service-layer engineering
+* Database modeling
+* REST API implementation
+* Multi-tenant SaaS concepts
+
+The application was intentionally structured to reflect senior-level software engineering practices suitable for scalable organizational platforms.
+
+---
+
+# License
+
+MIT License
+
+---
+
+# Author
+
+Keith Jordan
+
+Full Stack Web Applications Engineer
+Laravel | PHP | MySQL | Bootstrap | Vue | API Development
