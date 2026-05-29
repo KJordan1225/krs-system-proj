@@ -125,9 +125,9 @@ Vite
 
 ![Meetings](screenshots/meetings.png)
 
-## Attendance Tracking
+## Documents Tracking
 
-![Attendance](screenshots/attendance.png)
+![Attendance](screenshots/documents.png)
 
 ---
 
