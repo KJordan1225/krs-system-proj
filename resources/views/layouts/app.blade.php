@@ -135,6 +135,13 @@
                 Meetings Management
             </a>
 
+            <a href="{{ route('meeting-attendance.index') }}" class="{{ request()->is('meeting-attendance*') ? 'active' : '' }}">
+                Meeting Attendance
+            </a>
+
+            <a href="{{ route('documents.index') }}" class="{{ request()->is('documents*') ? 'active' : '' }}">
+                Documents
+            </a>
         </aside>
 
         <main class="org-main">

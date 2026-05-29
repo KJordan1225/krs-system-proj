@@ -7,6 +7,7 @@ use App\Http\Controllers\FinancialTransactionController;
 use App\Http\Controllers\DuesPaymentController;
 use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\MeetingAttendanceController;
+use App\Http\Controllers\DocumentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,6 +34,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('finances', FinancialTransactionController::class);
     Route::resource('dues', DuesPaymentController::class);
     Route::resource('meetings', MeetingController::class);
-    Route::resource('meeting-attendance', MeetingAttendanceController::class);    
+    Route::resource('meeting-attendance', MeetingAttendanceController::class); 
+    Route::resource('documents', DocumentController::class);
+
+    Route::get('documents/{document}/download', [DocumentController::class, 'download'])
+        ->name('documents.download');
+
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
